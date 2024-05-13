@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario cadastral</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <section>
+        <h2>Cadastre-se aqui</h2>
+        <hr>
+        <div class="container">
+            <form>
+                <label>Nome</label>
+                <input type="text" name="nome" id="nomeUsuario" required placeholder="Digite seu nome"/>
+                <label>Telefone</label>
+                <input type="tel" name="telefone" id="telefone" required placeholder="Digite seu telefone"/>
+                <label>E-mail</label>
+                <input type="text" name="email" id="emailUsuario" required placeholder="Digite seu E-mail"/>
+                <label>CPF</label>
+                <input type="text" name="cpf" id="cpfUsuario" required placeholder="Digite seu cpf"/>
+                <label>Endereço</label>
+                <input type="address" name="endereco" id="enderecoUsuario" required placeholder="Digite seu endereço"/>
+                <label>Cidade</label>
+                <input type="text" name="cidade" id="cidadeUsuario" required placeholder="Digite sua cidade"/>
+                <label>CEP</label>
+                <input type="text" name="cep" id="cepUsuario" required placeholder="Digite seu CEP"/>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+        
+    </section>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/messages_pt_BR.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#telefone').mask('(00)00000-0000')
+    $('#cpfUsuario').mask('000.000.000-00')
+    $('#cepUsuario').mask('00000-000')
+    $('form').validate({
+        rules: {
+            nome:{
+                required:true
+            },
+            email:{
+                required:true,
+                email:true
+            },
+            telefone:{
+                required:true
+            },
+            cpf:{
+                required:true
+                
+            }
+            
+            
+        }
+    })
+})
+   
+    </script>
+    
+</body>
+</html>
